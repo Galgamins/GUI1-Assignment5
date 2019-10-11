@@ -1,0 +1,130 @@
+/*
+    File: /usr/cs/undergrad/2020/yzhu/public_html/HW4.html
+    COMP 4610 Assignment: Styling Your First Web Page With CSS
+    Yinghui Zhu, Umass Lowell Computer Science, yinghui_zhu@student.uml.edu
+    Copyright (c) 2019 by Yinghui Zhu. All rights reserved.
+    Updated October 8th 2019
+
+    This file is a stylesheet for my GUI 1 assignments page. CSS code for the
+    timeline was taken and modified from https://www.w3schools.com/howto/howto_css_timeline.asp
+*/
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+/*This block sets the background image for the page.
+Image taken by Dakota Corbin, used with permission*/
+body {
+  background-image: url("../images/bookshelf.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+}
+
+/*This block styles the header*/
+h1 {
+  font-size: 24pt;
+  text-align: center;
+  color: white;
+}
+
+/*This block styles the borders of the content classes.
+The goal is to make it look like an open book*/
+.content {
+  border-width: medium;
+  border-style: inset;
+  border-color: brown;
+}
+
+/*This block changes the color of all text in content class to grey.
+Changed from default black because grey was easier on eyes.*/
+.content * {
+  color: grey;
+}
+
+.content h2 {
+  text-align: center;
+}
+
+/*This bloack styles the side bar for the page. Background image taken by Gordon
+Horton, used with permission. Code taken from https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp*/
+.sidebar {
+  height: 100%;
+  width: 180px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  background-image: url("../images/wood.jpg");
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar
+This code taken from https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp*/
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .sidebar a {
+    float: left;
+  }
+
+  div.content {
+    margin-left: 0;
+  }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally
+This code taken from https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp*/
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+/* Style for container blocks.*/
+.container {
+  padding: 20px 40px;
+  background-color: inherit;
+  width: 50%;
+  margin: auto;
+}
+
+/* Style for content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 15px;
+}
+
+/* Style for footer */
+#footer {
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  font-size: 85%;
+}
+
+#footer p {
+  text-align: center;
+  color: white;
+}
